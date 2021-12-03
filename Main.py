@@ -1,7 +1,7 @@
 import requests
 import configparser
-from flask import Flask, render_template
-from flask import request 
+from flask import Flask, render_template, request
+import json
 
 app = Flask(__name__)
 
@@ -11,12 +11,15 @@ def dashboard():
 
 @app.route('/results', methods=['POST'])
 def render_results():
-	zip_code = request.form['zipCode']
-	return "PIN CODE: " + zip_code
+    zip_code = request.form['zipCode']
+    api_key = get_api_key()
+    data = get_weather_results(zip_code, api_key)
+    temp = "{0:.2f}".format(data["main"]["temp"])
+    feels_like = "{0:.2f}".format(data["main"]["feels_like"])
+    weather = data["weather"][0]["main"]
+    location = data["name"]
 
-if __name__ == '__main__':
-	app.debug = True
-	app.run()
+    return render_template('results.html',location=location, temp=temp,feels_like=feels_like, weather=weather)
 
 def get_api_key():
 	config = configparser.ConfigParser()
@@ -24,7 +27,14 @@ def get_api_key():
 	return config['openweathermap']['api']
 
 def get_weather_results(zip_code, api_key):
-	api_url = "http://api.openweathermap.org/data/2.5/weather?zip={},in&appid={}".format(zip_code, api_key)
-	print(api_url)
+	api_url = "http://api.openweathermap.org/data/2.5/weather?zip={},in&units=metric&appid={}".format(zip_code, api_key)
+	r = requests.get(api_url)
+	return r.json()
 
-get_weather_results("737102", get_api_key())
+
+
+if __name__ == '__main__':
+	app.debug = True
+	app.run()
+
+
