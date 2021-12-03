@@ -1,6 +1,7 @@
 import requests
 import configparser
 from flask import Flask, render_template
+from flask import request 
 
 app = Flask(__name__)
 
@@ -8,11 +9,13 @@ app = Flask(__name__)
 def dashboard():
 	return render_template('home.html')
 
-@app.route('/results')
+@app.route('/results', methods=['POST'])
 def render_results():
-	return "Results page"
+	zip_code = request.form['zipCode']
+	return "PIN CODE: " + zip_code
 
 if __name__ == '__main__':
+	app.debug = True
 	app.run()
 
 def get_api_key():

@@ -7,8 +7,8 @@
 </head>
 <body>
 	<h2>Weather Forecast (India)</h2>
-	<form> 
-		PIN CODE: <input type="text" name="zipcode"><br>
+	<form action="{{ url_for('render_results') }}" method ="post"> 
+		PIN CODE: <input type="text" name="zipCode"><br>
 		<input type="submit" value="Submit">
 	</form>
 
