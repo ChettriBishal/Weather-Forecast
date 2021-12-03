@@ -1,5 +1,20 @@
 import requests
 import configparser
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def dashboard():
+	return render_template('home.html')
+
+@app.route('/results')
+def render_results():
+	return "Results page"
+
+if __name__ == '__main__':
+	app.run()
+
 def get_api_key():
 	config = configparser.ConfigParser()
 	config.read('config.ini')
