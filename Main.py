@@ -2,6 +2,7 @@ import requests
 import configparser
 from flask import Flask, render_template, request
 import json
+import wikipedia 
 
 app = Flask(__name__)
 
@@ -16,10 +17,14 @@ def render_results():
     data = get_weather_results(zip_code, api_key)
     temp = "{0:.2f}".format(data["main"]["temp"])
     feels_like = "{0:.2f}".format(data["main"]["feels_like"])
+    pressure = "{0:.2f}".format(data["main"]["pressure"])
+    humidity = "{0:.2f}".format(data["main"]["humidity"])
     weather = data["weather"][0]["main"]
     location = data["name"]
+    info = wikipedia.summary(location + "City India",sentences = 3)
 
-    return render_template('results.html',location=location, temp=temp,feels_like=feels_like, weather=weather)
+    return render_template('results.html',location=location, temp=temp,feels_like=feels_like,
+     weather=weather,info=info,pressure= pressure,humidity=humidity)
 
 def get_api_key():
 	config = configparser.ConfigParser()

@@ -4,12 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Weather Forecast</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css')}}">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-	<h2>Weather Forecast (India)</h2>
-	<form action="{{ url_for('render_results') }}" method ="post"> 
-		PIN CODE: <input type="text" name="zipCode"><br>
-		<input type="submit" value="Submit">
+	<h2 class="weatherText" style="color:violet;font-family:sans-serif;font-size:160%">Weather Forecast (India)</h2>
+	<form class="weatherText" id="weatherForm" action="{{ url_for('render_results') }}" method ="post"> 
+		PIN CODE: <input class="weatherText" id="weatherInput" type="text" name="zipCode"><br>
+		<input class="weatherText" id="pinSubmit" type="submit" value="Submit">
 	</form>
 
 </body>

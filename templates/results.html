@@ -3,14 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Weather Report</title>
+	<title>Result Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/results.css')}}">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div>
+	<div class ="show" id="weatherResults">
 		<h3>Weather in {{ location }} </h3>
-		<h2>{{ temp }}°C</h2>
-		<h3>{{ weather }} </h3>
-		<h4>Feels like: {{feels_like}}°C </h4>
+		<h2>Temperature: {{ temp }}°C</h2>
+		<h3>Weather: {{ weather }} </h3>
+		<h3>Feels like: {{feels_like}}°C </h3>
+		<h3>Pressure: {{pressure}} </h3>
+		<h3>Humidity: {{humidity}} </h3>
+	</div>
+	<div>
+		<h4 class="show"> {{ location }}: {{info}}</h4>
 	</div>
 </body>
 </html>
