@@ -7,14 +7,34 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/results.css')}}">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="ok">
 	<div class ="show" id="weatherResults">
 		<h3>Weather in {{ location }} </h3>
-		<h2>Temperature: {{ temp }}°C</h2>
-		<h3>Weather: {{ weather }} </h3>
-		<h3>Feels like: {{feels_like}}°C </h3>
-		<h3>Pressure: {{pressure}} </h3>
-		<h3>Humidity: {{humidity}} </h3>
+		<h2>Temperature: 
+			<div id ="small">
+				{{ temp }}°C
+			</div>
+		</h2>
+		<h3>Weather: 
+			<div id="small">
+				{{ weather }}
+			</div>
+		</h3>
+		<h3>Feels like: 
+			<div id="small">
+			{{feels_like}}°C 
+			</div>
+		</h3>
+		<h3>Pressure: 
+			<div id="small">
+			{{pressure}}
+			</div>
+			 </h3>
+		<h3>Humidity:
+			<div id="small">
+			 {{humidity}} 
+			</div>
+		</h3>
 	</div>
 	<div>
 		<h4 class="show"> {{ location }}: {{info}}</h4>

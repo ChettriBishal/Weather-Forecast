@@ -7,10 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css')}}">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body>
-	<h2 class="weatherText" style="color:violet;font-family:sans-serif;font-size:160%">Weather Forecast (India)</h2>
+<body id ="Bis">
+	<h2 class="weatherText" style="color:white;font-size:190%">Weather Forecast India</h2>
 	<form class="weatherText" id="weatherForm" action="{{ url_for('render_results') }}" method ="post"> 
-		PIN CODE: <input class="weatherText" id="weatherInput" type="text" name="zipCode"><br>
+		<div id="ppin">
+			PIN CODE: 
+		</div>
+			<input class="weatherText" id="weatherInput" type="text" name="zipCode"><br>
 		<input class="weatherText" id="pinSubmit" type="submit" value="Submit">
 	</form>
 

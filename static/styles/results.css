@@ -1,10 +1,30 @@
+{
+    box-sizing: border-box;
+}
 .show{
-	background-color: #EDBB99;
-	font-family: 'PT Sans', 'sans-serif';
-	font-size: 24px;
-	padding: 20px;
-	display: inline-block;
-	text-align: center;
-	margin: 20px;
-	border-radius: 10px;
+	opacity: 0.7;
+    background-color:#ab1302;
+    font-family: 'PT Sans', 'sans-serif';
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+#weatherResults{
+    position:  relative;
+    left: 32%;
+    width: 30%;
+    border: 1px solid black;
+}
+#small{
+	padding: 5px 5px;
+	background-color: #eb7005;
+}
+body#ok{
+	background: url("bis.jpg");
+	background-position: center;
+	background-size: 100% 100%;
 }
