@@ -8,7 +8,8 @@
 
 ## General info
 
-A webapp which uses OpenWeatherMap to request API calls for weather based on the PIN Code of an area entered by the user.
+* A webapp which uses OpenWeatherMap to request API calls for weather based on the PIN Code of an area entered by the user.
+* It also uses wikipedia module in Python to give a short information about the place as found from the API request.
 
 ![Screenshot](HOME.PNG)
 
