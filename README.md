@@ -1,15 +1,42 @@
-
 # Weather Forecast
 
-* Used OpenWeatherMap to request API calls for weather based on the PIN Code of an area entered by the user. 
-* Employed flask to deploy the app and to send data from one route to another.
-* Also used wikipedia module in Python to give a short information about the place as found from the API request.
-* Used HTML & CSS for Front-end. 
-## Homepage
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Screenshots](#screenshots)
+
+## General info
+
+A webapp which uses OpenWeatherMap to request API calls for weather based on the PIN Code of an area entered by the user.
 
 ![Screenshot](HOME.PNG)
 
-## Result Pages
+## Technologies
+Project is created with:
+* Python3 (v==3.8.10)
+* Flask (v==2.1.2)
+* HTML and CSS
+	
+## Setup
+
+* Install the dependencies
+
+```
+$ pip install Flask
+$ pip install wikipedia
+```
+
+* To run this project, clone it locally using git:
+```
+$ git clone https://github.com/bistimulus/Weather-Forecast.git
+$ cd Weather-Forecast
+$ python3 Main.py
+
+```
+
+## Screenshots
+
 ### Pin Code: 737136
 ![Screenshot](Majitar.PNG)
 
@@ -19,6 +46,3 @@
 ### Pin Code: 737135
 
 ![Screenshot](Rumtek.PNG)
-
-
-
